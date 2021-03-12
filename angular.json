@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.less"
             ],
             "scripts": []
@@ -62,6 +63,21 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true
             }
           }
         },
@@ -73,6 +89,9 @@
           "configurations": {
             "production": {
               "browserTarget": "recipe-book-front:build:production"
+            },
+            "local": {
+              "browserTarget": "recipe-book-front:build:local"
             }
           }
         },
@@ -94,6 +113,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.less"
             ],
             "scripts": []
@@ -127,5 +147,12 @@
       }
     }
   },
-  "defaultProject": "recipe-book-front"
+  "defaultProject": "recipe-book-front",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
+    }
+  }
 }

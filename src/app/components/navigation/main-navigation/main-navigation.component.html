@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="fixed-toolbar">
+  <div>
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span>Recipe book</span>
+  </div>
+  <span class="empty-divider"></span>
+  <app-login></app-login>
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer #drawer class="sidenav"
+              mode="side"
+              position="end"
+              opened
+  >
+    <mat-toolbar>Меню</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/404">404</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div [@routeAnimation]="getAnimationData(routerOutlet)">
+      <router-outlet #routerOutlet="outlet"></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -23,7 +23,7 @@ import { UserAuth } from '../interface';
       <button mat-button (click)="submit()">Вход</button>
     </div>
   `,
-  styleUrls: ['./auth-form.component.less'],
+  styleUrls: ['./auth-form.component.scss'],
 })
 export class AuthFormComponent {
 

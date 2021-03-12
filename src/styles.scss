@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@include mat-core();
+
+
+$primary: mat-palette($mat-blue, 800);
+$accent: mat-palette($mat-orange);
+
+$theme: mat-dark-theme($primary, $accent);
+
+@include angular-material-theme($theme);

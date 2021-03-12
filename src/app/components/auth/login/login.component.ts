@@ -19,7 +19,7 @@ import { AuthFormComponent } from './auth-form/auth-form.component';
         </button>
 
         <mat-menu #userMenu="matMenu">
-          <button mat-menu-item (click)="logout()" >
+          <button mat-menu-item (click)="logout()">
             <mat-icon>logout</mat-icon>
             <span>Выход</span>
           </button>
@@ -27,7 +27,7 @@ import { AuthFormComponent } from './auth-form/auth-form.component';
       </ng-container>
     </div>
   `,
-  styleUrls: ['./login.component.less'],
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
 

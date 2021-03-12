@@ -8,7 +8,7 @@ import { slideInAnimation } from './animations';
 @Component({
   selector: 'app-main-navigation',
   templateUrl: './main-navigation.component.html',
-  styleUrls: ['./main-navigation.component.less'],
+  styleUrls: ['./main-navigation.component.scss'],
   animations: [slideInAnimation],
 })
 export class MainNavigationComponent {

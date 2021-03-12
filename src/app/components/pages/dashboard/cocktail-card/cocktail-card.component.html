@@ -1,0 +1,22 @@
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <mat-card-title>
+      {{card.title}}
+      <button [matMenuTriggerFor]="menu" aria-label="Toggle menu" class="more-button" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item>Expand</button>
+        <button mat-menu-item>Remove</button>
+      </mat-menu>
+    </mat-card-title>
+  </mat-card-header>
+  <img *ngIf="card.image" [src]="card.image" alt="Photo of a Shiba Inu" mat-card-image>
+  <mat-card-content class="dashboard-card-content">
+    <div>{{card.description}}</div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>DISLIKE</button>
+  </mat-card-actions>
+</mat-card>

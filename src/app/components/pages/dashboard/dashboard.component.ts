@@ -8,26 +8,72 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+  gridByBreakpoint = {
+    xl: 3,
+    lg: 3,
+    md: 3,
+    sm: 2,
+    xs: 1,
+  };
 
+  cols: number = this.gridByBreakpoint.xl;
+
+
+  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+    map(() => {
       return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
+        {
+          title: 'Card 1',
+          description: 'bla bla bla',
+          image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+        },
+        {
+          title: 'Card 2',
+          description: 'bla bla bla',
+        },
+        {
+          title: 'Card 3',
+          description: 'bla bla bla',
+          image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+        },
+        {
+          title: 'Card 4',
+          description: 'bla bla bla',
+          image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+        },
+        {
+          title: 'Card 5',
+          description: 'bla bla bla',
+        },
       ];
-    })
+    }),
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+      Breakpoints.Medium,
+      Breakpoints.Large,
+      Breakpoints.XLarge,
+    ]).subscribe(result => {
+      if (result.matches) {
+        if (result.breakpoints[Breakpoints.XSmall]) {
+          this.cols = this.gridByBreakpoint.xs;
+        }
+        if (result.breakpoints[Breakpoints.Small]) {
+          this.cols = this.gridByBreakpoint.sm;
+        }
+        if (result.breakpoints[Breakpoints.Medium]) {
+          this.cols = this.gridByBreakpoint.md;
+        }
+        if (result.breakpoints[Breakpoints.Large]) {
+          this.cols = this.gridByBreakpoint.lg;
+        }
+        if (result.breakpoints[Breakpoints.XLarge]) {
+          this.cols = this.gridByBreakpoint.xl;
+        }
+      }
+    });
+  }
 }

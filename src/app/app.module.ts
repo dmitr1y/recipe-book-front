@@ -17,14 +17,13 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { AuthModule } from './components/auth/auth.module';
 import { MainNavigationComponent } from './components/navigation/main-navigation/main-navigation.component';
-import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { DashboardModule } from './components/pages/dashboard/dashboard.module';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     MainNavigationComponent,
     NotFoundComponent,
   ],
@@ -37,6 +36,7 @@ import { SelectivePreloadingStrategyService } from './selective-preloading-strat
       },
     ),
     AuthModule,
+    DashboardModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,

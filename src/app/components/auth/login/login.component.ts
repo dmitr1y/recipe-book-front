@@ -14,7 +14,7 @@ import { AuthFormComponent } from './auth-form/auth-form.component';
       </ng-container>
 
       <ng-container *ngIf="auth.isAuthorized()">
-        <button mat-mini-fab color="basic" aria-label="Меню пользователя" [matMenuTriggerFor]="userMenu">
+        <button mat-mini-fab color="accent" aria-label="Меню пользователя" [matMenuTriggerFor]="userMenu">
           <mat-icon>face</mat-icon>
         </button>
 

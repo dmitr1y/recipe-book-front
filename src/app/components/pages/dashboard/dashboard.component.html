@@ -1,9 +1,9 @@
 <div class="grid-container">
   <h1 class="mat-h1">Рецепты</h1>
-  <mat-grid-list [cols]="cols">
-    <mat-grid-tile *ngFor="let card of cards | async">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div *ngFor="let card of cards | async" fxFlex="25%" fxFlex.sm="63%" fxFlex.xs="100%">
       <app-cocktail-card [card]="card"></app-cocktail-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 </div>
 

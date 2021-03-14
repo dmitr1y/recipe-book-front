@@ -23,25 +23,30 @@ export class DashboardComponent {
     map(() => {
       return [
         {
+          id: 1,
           title: 'Card 1',
           description: 'bla bla bla',
           image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
         },
         {
+          id: 2,
           title: 'Card 2',
           description: 'bla bla bla',
         },
         {
+          id: 3,
           title: 'Card 3',
           description: 'bla bla bla',
           image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
         },
         {
+          id: 4,
           title: 'Card 4',
           description: 'bla bla bla',
           image: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
         },
         {
+          id: 5,
           title: 'Card 5',
           description: 'bla bla bla',
         },

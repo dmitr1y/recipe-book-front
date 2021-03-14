@@ -19,6 +19,7 @@ import { AuthModule } from './components/auth/auth.module';
 import { MainNavigationComponent } from './components/navigation/main-navigation/main-navigation.component';
 import { DashboardModule } from './components/pages/dashboard/dashboard.module';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { RecipeModule } from './components/pages/recipe/recipe.module';
 import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
 
 @NgModule({
@@ -49,6 +50,7 @@ import { SelectivePreloadingStrategyService } from './selective-preloading-strat
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    RecipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
